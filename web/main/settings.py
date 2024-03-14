@@ -327,3 +327,6 @@ APP_STORE_URL="http://127.0.0.1:3000"
 APP_STORE_FRONTEND_URL='"http://127.0.0.1:3000"/home'
 FRONTEND_DOMAIN = "http://127.0.0.1:3000"
 # handler404 = 'main.urls.page_not_found_view'
+
+GDAL_LIBRARY_PATH = '/opt/homebrew/Cellar/gdal/3.8.4_3/lib/libgdal.34.dylib' 
+GEOS_LIBRARY_PATH = '/opt/homebrew/Cellar/geos/3.12.1/lib/libgeos_c.1.dylib'

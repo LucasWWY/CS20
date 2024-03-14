@@ -66,7 +66,7 @@ class MultiApp:
         st.sidebar.title("Contribute")
         st.sidebar.info(
             "This is an open source project and you are very welcome to contribute your "
-            "comments, questions, resources and apps as "
+            "comments, questions, resources and apps ˚†as "
             "[issues](https://github.com/giswqs/streamlit-geospatial/issues) or "
             "[pull requests](https://github.com/giswqs/streamlit-geospatial/pulls) "
             "to the [source code](https://github.com/giswqs/streamlit-geospatial). "
