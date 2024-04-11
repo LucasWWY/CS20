@@ -17,6 +17,7 @@ from channels.routing import ProtocolTypeRouter, URLRouter
 
 import notification.routing
 import knowledge_management_system.routing
+import chat.routing
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'main.settings')
 
@@ -30,7 +31,8 @@ application = ProtocolTypeRouter({
         URLRouter(
             # Add your ASGI url_patterns here
             notification.routing.websocket_urlpatterns +
-            knowledge_management_system.routing.websocket_urlpatterns
+            knowledge_management_system.routing.websocket_urlpatterns +
+            chat.routing.websocket_urlpatterns
         )
     ),
 })

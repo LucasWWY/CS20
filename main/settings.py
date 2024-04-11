@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 ## For adding GDAL to the environment, check README for explanation
 if os.name == 'nt':
-    VENV_BASE = os.environ['VIRTUAL_ENV']
+    VENV_BASE = "E:\\Workplace\\CS20_USYD\\venv"
     os.environ['PATH'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo') + ';' + os.environ['PATH']
     os.environ['PROJ_LIB'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo\\data\\proj') + ';' + os.environ['PATH']
 
@@ -80,7 +80,8 @@ PROJECT_APPS = [
     'project_management',
     'autoform',
     'knowledge_management_system',
-    'notification'
+    'notification',
+    'chat'
 ]
 
 
@@ -167,8 +168,11 @@ ASGI_APPLICATION = 'main.asgi.application'
 # TODO: In production we want to use a redis server.
 CHANNEL_LAYERS = {
     "default": {
-        "BACKEND": "channels.layers.InMemoryChannelLayer"
-    }
+        "BACKEND": "channels_redis.core.RedisChannelLayer",
+        "CONFIG": {
+            "hosts": [(os.environ.get('DB_HOST', 'localhost'), 6379)],
+        },
+    },
 }
 
 # Database
